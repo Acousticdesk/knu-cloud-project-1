@@ -31,9 +31,7 @@ var AppModule = /** @class */ (function () {
                     username: process.env.DB_USER,
                     password: process.env.DB_PASSWORD,
                     database: process.env.DB_NAME,
-                    entities: [user_db_entity_1.User],
-                    synchronize: true,
-                    logging: true
+                    entities: [user_db_entity_1.User]
                 }),
             ],
             controllers: [app_controller_1.AppController],
