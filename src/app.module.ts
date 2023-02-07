@@ -7,6 +7,9 @@ import { CollectionsModule } from './collections/collections.module';
 import { RemarksModule } from './remarks/remarks.module';
 import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.db-entity';
+import { Remark } from './remarks/entities/remark.db-entity';
+import { Collection } from './collections/entities/collection.db-entity';
+import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
 
 @Module({
   imports: [
@@ -20,7 +23,8 @@ import { User } from './users/entities/user.db-entity';
       username: process.env.DB_USER,
       password: process.env.DB_PASSWORD,
       database: process.env.DB_NAME,
-      entities: [User]
+      entities: [User, Remark, Collection],
+      namingStrategy: new SnakeNamingStrategy(),
     }),
   ],
   controllers: [AppController],

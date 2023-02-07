@@ -1,11 +1,19 @@
 import { Injectable } from '@nestjs/common';
 import { CreateRemarkDto } from './dto/create-remark.dto';
 import { UpdateRemarkDto } from './dto/update-remark.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Remark } from './entities/remark.db-entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class RemarksService {
+  constructor(
+    @InjectRepository(Remark)
+    private readonly remarksRepository: Repository<Remark>,
+  ) {}
+
   create(createRemarkDto: CreateRemarkDto) {
-    return 'This action adds a new remark';
+    return this.remarksRepository.insert(createRemarkDto);
   }
 
   findAll() {
