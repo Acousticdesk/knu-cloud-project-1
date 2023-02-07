@@ -17,18 +17,18 @@ export class RemarksService {
   }
 
   findAll() {
-    return `This action returns all remarks`;
+    return this.remarksRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} remark`;
+    return this.remarksRepository.findBy({ id });
   }
 
   update(id: number, updateRemarkDto: UpdateRemarkDto) {
-    return `This action updates a #${id} remark`;
+    return this.remarksRepository.update({ id }, updateRemarkDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} remark`;
+    return this.remarksRepository.delete({ id });
   }
 }

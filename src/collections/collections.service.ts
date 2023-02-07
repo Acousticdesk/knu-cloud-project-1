@@ -17,18 +17,18 @@ export class CollectionsService {
   }
 
   findAll() {
-    return `This action returns all collections`;
+    return this.collectionsRepository.find();
   }
 
   findOne(id: number) {
-    return `This action returns a #${id} collection`;
+    return this.collectionsRepository.findBy({ id });
   }
 
   update(id: number, updateCollectionDto: UpdateCollectionDto) {
-    return `This action updates a #${id} collection`;
+    return this.collectionsRepository.update({ id }, updateCollectionDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} collection`;
+    return this.collectionsRepository.delete({ id });
   }
 }

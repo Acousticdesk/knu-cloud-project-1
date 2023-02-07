@@ -13,10 +13,10 @@ export class UsersService {
   ) {}
 
   create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+    return this.usersRepository.insert(createUserDto);
   }
 
-  async findAll() {
+  findAll() {
     return this.usersRepository.find();
   }
 
@@ -25,10 +25,10 @@ export class UsersService {
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    return this.usersRepository.update({ id }, updateUserDto);
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    return this.usersRepository.delete({ id });
   }
 }
