@@ -21,7 +21,7 @@ export class CollectionsService {
   }
 
   findOne(id: number) {
-    return this.collectionsRepository.findBy({ id });
+    return this.collectionsRepository.findOneBy({ id });
   }
 
   update(id: number, updateCollectionDto: UpdateCollectionDto) {

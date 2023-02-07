@@ -21,7 +21,7 @@ export class RemarksService {
   }
 
   findOne(id: number) {
-    return this.remarksRepository.findBy({ id });
+    return this.remarksRepository.findOneBy({ id });
   }
 
   update(id: number, updateRemarkDto: UpdateRemarkDto) {
