@@ -1,4 +1,4 @@
 export class CreateCollectionDto {
-  userId: number;
+  userId: string;
   name: string;
 }

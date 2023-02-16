@@ -16,8 +16,8 @@ export class CollectionsService {
     return this.collectionsRepository.insert(createCollectionDto);
   }
 
-  findAll() {
-    return this.collectionsRepository.find();
+  findAll(userId: string) {
+    return this.collectionsRepository.findBy({ userId });
   }
 
   findOne(id: number) {

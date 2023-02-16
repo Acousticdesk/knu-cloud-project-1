@@ -16,8 +16,8 @@ export class RemarksService {
     return this.remarksRepository.insert(createRemarkDto);
   }
 
-  findAll() {
-    return this.remarksRepository.find();
+  findAll(collectionId: string) {
+    return this.remarksRepository.findBy({ collection: collectionId });
   }
 
   findOne(id: number) {

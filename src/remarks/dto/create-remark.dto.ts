@@ -1,5 +1,5 @@
 export class CreateRemarkDto {
   name: string;
-  collection: number;
+  collection: string;
   date?: string;
 }

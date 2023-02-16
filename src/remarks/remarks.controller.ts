@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { RemarksService } from './remarks.service';
 import { CreateRemarkDto } from './dto/create-remark.dto';
 import { UpdateRemarkDto } from './dto/update-remark.dto';
@@ -12,9 +20,9 @@ export class RemarksController {
     return this.remarksService.create(createRemarkDto);
   }
 
-  @Get()
-  findAll() {
-    return this.remarksService.findAll();
+  @Get('/collection/:collectionId')
+  findAll(@Param('collectionId') collectionId: string) {
+    return this.remarksService.findAll(collectionId);
   }
 
   @Get(':id')

@@ -12,5 +12,5 @@ export class Remark {
   date: string;
 
   @Column()
-  collection: number;
+  collection: string;
 }
