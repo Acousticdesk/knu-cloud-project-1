@@ -25,6 +25,9 @@ import { SnakeNamingStrategy } from 'typeorm-naming-strategies';
       database: process.env.DB_NAME,
       entities: [User, Remark, Collection],
       namingStrategy: new SnakeNamingStrategy(),
+      ssl: {
+        rejectUnauthorized: false,
+      },
     }),
   ],
   controllers: [AppController],

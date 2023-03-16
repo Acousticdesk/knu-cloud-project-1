@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/e6740c84-4d84-49cd-878c-9b4a725c83cc/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/akicha-cloud-1",
+    "appService.deploySubpath": "."
+}
